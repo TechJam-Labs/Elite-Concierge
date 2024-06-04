@@ -1,3 +1,36 @@
+/* src/index.css */
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap");
+
+/* Other global styles */
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.custom-shape-divider-top-1717500994 {
+  position: absolute;
+  top: -5px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
+
+.custom-shape-divider-top-1717500994 svg {
+  position: relative;
+  display: block;
+  width: calc(202% + 1.3px);
+  height: 156px;
+  transform: rotateY(180deg);
+}
+
+.custom-shape-divider-top-1717500994 .shape-fill {
+  fill: #ffffff;
+}
+
+.rotateddiv {
+  text-transform: uppercase;
+  transform: rotate(-90deg);
+}

@@ -1,5 +1,25 @@
+import {
+  createBrowserRouter,
+  createRoutesFromElements,
+  RouterProvider,
+  Route,
+} from "react-router-dom";
+import HomePage from "./Pages/HomePage";
 function App() {
-  return <div className="text-red-500">hello</div>;
+  const router = createBrowserRouter(
+    createRoutesFromElements(
+      <Route>
+        {/**Public Routes */}
+        <Route index element={<HomePage />} />
+        {/* <Route path="/contact" element={<Contactpage />} /> */}
+      </Route>
+    )
+  );
+  return (
+    <>
+      <RouterProvider router={router} />
+    </>
+  );
 }
 
 export default App;
