@@ -15,6 +15,7 @@ import Accordion from "./Accordion";
 import Service from "../assets/services.png";
 import Circle from "../assets/circle.svg";
 import Footer from "./Footer";
+import ServiceColumn from "./ServiceColumn";
 
 function HomePage() {
   const travelItems = [
@@ -56,6 +57,37 @@ function HomePage() {
       title:
         "Check out the latest spot people are visiting all around the world.",
       linkText: "Continue reading",
+    },
+  ];
+  const items = [
+    {
+      title: "Customized Solutions:",
+      description:
+        "Receive services specifically designed to match your individual requirements.",
+    },
+    {
+      title: "Exclusive Benefits:",
+      description:
+        "Enjoy special perks and privileges as part of our dedicated client base.",
+    },
+    {
+      title: "24/7 Support:",
+      description:
+        "Access round-the-clock assistance for any queries or concerns.",
+    },
+    {
+      title: "Expert Guidance:",
+      description:
+        "Benefit from the expertise of our highly trained professionals.",
+    },
+    {
+      title: "Flexible Options:",
+      description:
+        "Choose from a range of services that adapt to your lifestyle and schedule.",
+    },
+    {
+      title: "Premium Quality:",
+      description: "Experience top-notch quality in every service we provide.",
     },
   ];
   return (
@@ -219,7 +251,7 @@ function HomePage() {
           <img
             className="h-full w-full z-[-30] mt-[-4rem] object-cover"
             src={Service}
-            alt="heroimage"
+            alt="serviceimage"
           />
           <div className="text-[#ffffff] absolute inset-0 top-[25%] px-[6rem]">
             <div className="text-center">
@@ -229,45 +261,21 @@ function HomePage() {
             </div>
             <div className="w-full flex justify-end pt-4">
               {/* <div className="w-[50%]"></div> */}
-              <div className="w-[50%] flex gap-6">
-                <div className="flex flex-col gap-6 mt-[2.3rem]">
-                  <div className="border border-solid border-1 border-[#CC9933] p-4  ">
-                    <h3 className="font-outfit text-[32px] text-[#FFF3DC]">
-                      Travel & Leisure
-                    </h3>
-                    <p className="font-lato text-[20px] underline text-[#CC9933]">
-                      Learn More
-                    </p>
-                  </div>
-
-                  <div className="border border-solid border-1 border-[#CC9933] p-4 w-[70%] ml-[5rem]">
-                    <h3 className="font-outfit text-[32px] text-[#FFF3DC]">
-                      Hospitality
-                    </h3>
-                    <p className="font-lato text-[20px] underline text-[#CC9933]">
-                      Learn More
-                    </p>
-                  </div>
-                </div>
-                <div className="flex flex-col gap-4">
-                  <div className="border border-solid border-1 border-[#CC9933] p-4 w-[80%]">
-                    <h3 className="font-outfit text-[32px] leading-[1.1] text-[#FFF3DC]">
-                      Lifestyle Management
-                    </h3>
-                    <p className="font-lato text-[20px] underline text-[#CC9933]">
-                      Learn More
-                    </p>
-                  </div>
-
-                  <div className="border border-solid border-1 border-[#CC9933] p-4 w-[80%]">
-                    <h3 className="font-outfit text-[32px] leading-[1.1] text-[#FFF3DC]">
-                      Personal Shopping
-                    </h3>
-                    <p className="font-lato text-[20px] underline text-[#CC9933]">
-                      Learn More
-                    </p>
-                  </div>
-                </div>
+              <div className="w-[50%] flex gap-4">
+                <ServiceColumn
+                  services={[
+                    { title: "Travel & Leisure", width: "w-full" },
+                    { title: "Hospitality", width: "w-[70%] ml-[5rem]" },
+                  ]}
+                  marginTop="mt-[2.3rem]"
+                />
+                <ServiceColumn
+                  services={[
+                    { title: "Lifestyle Management", width: "w-[80%]" },
+                    { title: "Personal Shopping", width: "w-[80%]" },
+                  ]}
+                  marginTop="mt-[-2rem]"
+                />
               </div>
             </div>
           </div>
@@ -281,45 +289,12 @@ function HomePage() {
             style={{ borderLeft: "2px solid #FFFEF8" }}
             className="ml-[-19rem] flex flex-col gap-2 pl-2"
           >
-            <div>
-              <h6 className="font-bold">Customized Solutions: </h6>
-              <p className="w-[60%] leading-[1] ">
-                Receive services specifically designed to match your individual
-                requirements.
-              </p>
-            </div>
-            <div>
-              <h6 className="font-bold">Exclusive Benefits: </h6>
-              <p className="w-[60%] leading-[1]">
-                Enjoy special perks and privileges as part of our dedicated
-                client base.
-              </p>
-            </div>
-            <div>
-              <h6 className="font-bold">24/7 Support: </h6>
-              <p className="w-[60%] leading-[1]">
-                Access round-the-clock assistance for any queries or concerns.
-              </p>
-            </div>
-            <div>
-              <h6 className="font-bold">Expert Guidance: </h6>
-              <p className="w-[60%] leading-[1]">
-                Benefit from the expertise of our highly trained professionals.
-              </p>
-            </div>
-            <div>
-              <h6 className="font-bold">Flexible Options: </h6>
-              <p className="w-[60%] leading-[1]">
-                Choose from a range of services that adapt to your lifestyle and
-                schedule.
-              </p>
-            </div>
-            <div>
-              <h6 className="font-bold">Premium Quality:</h6>
-              <p className="w-[60%] leading-[1]">
-                Experience top-notch quality in every service we provide.
-              </p>
-            </div>
+            {items.map(({ title, description }) => (
+              <div key={title}>
+                <h6 className="font-bold">{title}</h6>
+                <p className="w-[60%] leading-[1]">{description}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
