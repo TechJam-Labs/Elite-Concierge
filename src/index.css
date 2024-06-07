@@ -8,7 +8,7 @@
 @tailwind components;
 @tailwind utilities;
 
-.custom-shape-divider-top-1717500994 {
+.custom {
   position: absolute;
   top: -5px;
   left: 0;
@@ -18,7 +18,7 @@
   transform: rotate(180deg);
 }
 
-.custom-shape-divider-top-1717500994 svg {
+.custom svg {
   position: relative;
   display: block;
   width: calc(202% + 1.3px);
@@ -26,7 +26,7 @@
   transform: rotateY(180deg);
 }
 
-.custom-shape-divider-top-1717500994 .shape-fill {
+.custom .shape-fill {
   fill: #ffffff;
 }
 

@@ -18,7 +18,9 @@ function Accordion({ content, topic }) {
       >
         <div className="flex items-center gap-2">
           <button>{isOpen ? "" : <img src={Arrowsvg} alt="arrow" />}</button>
-          <h2 className="text-[20px] font-outfit pl-4">{topic}</h2>
+          <h2 className="text-[14px] font-outfit  md:text-[20px] md:pl-4">
+            {topic}
+          </h2>
         </div>
         {/* <button>
           {isOpen ? (

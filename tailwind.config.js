@@ -9,7 +9,7 @@ module.exports = {
         lato: ["Lato", "sans-serif"],
       },
       letterSpacing: {
-        "6px": "8px",
+        "6px": "3px",
       },
       boxShadow: {
         bottom: "0 4px 0 rgba(204, 153, 51, 1)",
