@@ -6,16 +6,16 @@ import Instagram from "../assets/instagram.svg";
 function Footer() {
   return (
     <footer className=" px-[2rem] pt-8 bg-[#000000] sm:px-[5rem] sm:py-12">
-      <div className="sm:flex sm:items-center sm:justify-between">
+      <div className="sm:flex sm:items-center sm:justify-center lg:justify-between">
         <div>
           <img
-            className=" hidden sm:block w-[70px]"
+            className=" hidden lg:block w-[70px]"
             src={EliteLogo}
             alt="afflogo"
           />
         </div>
         <div className="flex flex-col gap-2 items-center">
-          <ul className=" hidden sm:flex sm:gap-4 sm:underline sm:font-outfit sm:text-[#ffffff] sm:text-[16px]">
+          <ul className=" hidden lg:flex lg:gap-4 lg:underline lg:font-outfit lg:text-[#ffffff] lg:text-[16px]">
             <li className="underline">General Enquiries</li>
             <li className="underline">Business Concierge Enquiries</li>
             <li className="underline">Private Concierge Enquiries</li>
@@ -27,7 +27,7 @@ function Footer() {
               | Cookies Policy | Privacy Policy
             </li>
           </ul>
-          <div className="flex items-center gap-5 sm:hidden">
+          <div className="flex items-center gap-5 lg:hidden">
             <img src={Facebook} alt="facebook-image" />
             <img src={Instagram} alt=" instagram-image" />
             <img src={Tik} alt="tik-image" />
@@ -36,7 +36,7 @@ function Footer() {
             Copyright @ 2024 All rights reserved
           </p>
         </div>
-        <div className="hidden sm:flex sm:items-center sm:mt-[-1rem] sm:gap-5">
+        <div className="hidden lg:flex lg:items-center lg:mt-[-1rem] lg:gap-5">
           <img src={Facebook} alt="facebook-image" />
           <img src={Instagram} alt=" instagram-image" />
           <img src={Tik} alt="tik-image" />

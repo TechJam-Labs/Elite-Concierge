@@ -16,6 +16,7 @@ import Service from "../assets/services.png";
 import Circle from "../assets/circle.svg";
 import Footer from "./Footer";
 import ServiceColumn from "./ServiceColumn";
+import { NavLink } from "react-router-dom";
 
 function HomePage() {
   const travelItems = [
@@ -94,7 +95,7 @@ function HomePage() {
     <>
       <NavigationBar />
       <section>
-        <div className="overflow-hidden w-full relative mt-[-138px] z-[-15] ">
+        <div className="overflow-hidden w-full relative mt-[-138px]  ">
           {/* hero image for shero section  */}
           <img
             className="h-[350px] w-full object-cover sm:h-[450px] md:h-[550px] lg:h-full"
@@ -106,7 +107,7 @@ function HomePage() {
 
           {/* hero section content */}
 
-          <div className="absolute top-[33%] px-[3rem] w-[100%] flex justify-center md:top-[30%] lg:top-[30%]">
+          <div className="absolute top-[38%] px-[3rem] w-[100%] flex justify-center md:top-[30%] lg:top-[30%]">
             <div className="text-center">
               <p className=" text-[16px] font-outfit text-[#EADEDE] md:text-[30px] lg:text-[40px]  ">
                 Time is the ultimate luxury!
@@ -116,8 +117,9 @@ function HomePage() {
                 it
               </p>
               {/* call to action button CTA */}
-              <button className="px-4 py-2 font-bold shadow-bottom tracking-6px font-outfit mt-[2.5rem] cursor-pointer rounded-lg bg-[#0E0E0D] text-[#FFFFFF] text-[16px] sm:mt-[4.5rem] md:mt-[6.5rem] lg:mt-[14.5rem] lg:py-4 lg:px-6 lg:text-[20px]">
-                Find Out More
+
+              <button className="px-3 py-2 font-bold  shadow-bottom tracking-6px font-outfit mt-[2.5rem] cursor-pointer rounded-lg bg-[#0E0E0D] text-[#FFFFFF] text-[10px] md:text-[16px] sm:mt-[4.5rem] md:mt-[6.5rem] lg:mt-[14.5rem] lg:py-4 lg:px-6 lg:text-[20px]">
+                <NavLink to="/contact">Find Out More</NavLink>
               </button>
             </div>
           </div>
@@ -209,7 +211,7 @@ function HomePage() {
             </h4>
             <p
               style={{ fontWeight: "100" }}
-              className="text-center font-outfit text-[23px] font-extralight leading-tight text-[#000000] md:text-end md:text-[34px]"
+              className="text-center font-outfit mb-2 text-[23px] font-extralight leading-tight text-[#000000] md:text-end md:text-[34px]"
             >
               Your personalized gateway to luxury, relaxation & unforgettable
               adventures!
@@ -281,7 +283,7 @@ function HomePage() {
                 Our services
               </h2>
             </div>
-            <div className="w-full px-[2rem] md:px-0 md:flex md:justify-end pt-4">
+            <div className="w-full px-[2rem] lg:px-0 md:flex md:justify-center lg:justify-end pt-4 md:pt-8">
               {/* <div className="w-[50%]"></div> */}
               <div className=" w-full md:w-[50%] md:flex md:gap-4">
                 <ServiceColumn
@@ -293,8 +295,14 @@ function HomePage() {
                 />
                 <ServiceColumn
                   services={[
-                    { title: "Lifestyle Management", width: "md:w-[80%]" },
-                    { title: "Personal Shopping", width: "md:w-[80%]" },
+                    {
+                      title: "Lifestyle Management",
+                      width: "md:w-[98%] lg:w-[100%]",
+                    },
+                    {
+                      title: "Personal Shopping",
+                      width: "md:w-[98%] lg:w-[100%]",
+                    },
                   ]}
                   marginTop="mt-[1rem] md:mt-[-2rem]"
                 />
@@ -303,7 +311,7 @@ function HomePage() {
           </div>
           {/* <div className="absolute inset-0 bg-[#000] opacity-80"></div> */}
         </div>
-        <div className=" text-[#F8EEEE]  absolute bottom-[5%] md:bottom-[10%] px-[2rem] font-outfit md:flex md:px-[8rem]  ">
+        <div className=" text-[#F8EEEE]  absolute bottom-[5%] md:bottom-[10%] px-[2rem] font-outfit md:hidden lg:block lg:flex lg:px-[8rem]  ">
           <h3 className="text-center text-[#F8E6C3] font-outfit uppercase font-bold text-[24px] md:text-[35px] md:mb-0 md:-rotate-90  ">
             with us you get...
           </h3>

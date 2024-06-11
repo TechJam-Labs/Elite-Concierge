@@ -7,6 +7,8 @@ module.exports = {
         outfit: ["Outfit", "sans-serif"],
         roboto: ["Roboto Condensed", "sans-serif"],
         lato: ["Lato", "sans-serif"],
+        comic: ['"Comic Neue"', "cursive"],
+        dynalight: ["Dynalight", "cursive"],
       },
       letterSpacing: {
         "6px": "3px",

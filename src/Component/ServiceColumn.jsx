@@ -8,7 +8,7 @@ function ServiceColumn({ services, marginTop }) {
           key={index}
           className={`border border-[#CC9933] p-4 ${service.width}`}
         >
-          <h3 className="font-outfit text-[28px] md:text-[32px] leading-[1.1] text-[#FFF3DC]">
+          <h3 className="font-outfit text-[28px] lg:text-[32px] leading-[1.1] text-[#FFF3DC]">
             {service.title}
           </h3>
           <p className="font-lato text-[20px] underline text-[#CC9933]">
