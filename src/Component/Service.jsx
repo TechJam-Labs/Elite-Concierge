@@ -13,11 +13,11 @@ function Service() {
   return (
     <>
       <nav
-        className="bg-[#000000CC] bg-cover bg-no-repeat bg-center pb-[7.5rem]"
+        className="bg-[#000000CC] bg-cover bg-no-repeat lg:bg-center bg-bottom lg:pb-[7.5rem] pb-[3rem]"
         style={{ backgroundImage: `url(${servicebg})` }}
       >
         <NavigationBar />
-        <h1 className="text-[#FFFFFF] font-outfit text-[3rem] textfont-semibold text ml-[7.5rem] mt-[5rem]">
+        <h1 className="text-[#FFFFFF] font-outfit lg:text-[3rem] text-[2rem] textfont-semibold ml-8 lg:ml-[7.5rem] mt-[3rem] lg:mt-[5rem]">
           OUR SERVICES
         </h1>
       </nav>

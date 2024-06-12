@@ -7,7 +7,7 @@ function Button({ label, className }) {
       style={{
         backgroundColor: "#262524",
         color: "white",
-        borderRadius: "0.3rem",
+        borderRadius: "0.6rem",
         border: "2px solid #CC9933",
         fontWeight: 500,
         fontFamily: "outfit",
