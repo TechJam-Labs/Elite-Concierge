@@ -9,7 +9,7 @@ function Categories() {
         <span className="text-[#CC9933] ">CATEGORIES </span>
         <span>OF OUR SERVICES</span>
       </div>
-      <div className="flex lg:flex-row flex-wrap flex-col lg:justify-around items-center gap-[2rem] lg:gap-0">
+      <div className="flex md:flex-row md:flex-wrap flex-col lg:justify-around items-center gap-[2rem] lg:gap-0">
         {categories.map((service, index) => (
           <CategoriesCard
             key={index}
