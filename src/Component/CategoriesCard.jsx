@@ -10,7 +10,7 @@ function CategoriesCard({ img, header, title, body }) {
           backgroundPosition: "contain",
         }}
       >
-        <div className="text-white pb-[4.8rem] pl-4 pt-4 bg-[#00000080] w-full rounded-t-[1.25rem]">
+        <div className="text-white pb-[4.8rem] pl-4 pt-4 bg-[#00000080] w-full rounded-[1.25rem]">
           <p className="font-outfit font-semibold text-[1.5rem]">{header}</p>
           <p>{title}</p>
           <p>{body}</p>
