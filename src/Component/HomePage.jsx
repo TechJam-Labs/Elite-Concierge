@@ -16,7 +16,7 @@ import Service from "../assets/services.png";
 import Circle from "../assets/circle.svg";
 import Footer from "./Footer";
 import ServiceColumn from "./ServiceColumn";
-import { NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const travelItems = [
@@ -119,7 +119,7 @@ function HomePage() {
               {/* call to action button CTA */}
 
               <button className="px-3 py-2 font-bold  shadow-bottom tracking-6px font-outfit mt-[2.5rem] cursor-pointer rounded-lg bg-[#0E0E0D] text-[#FFFFFF] text-[10px] md:text-[16px] sm:mt-[4.5rem] md:mt-[6.5rem] lg:mt-[14.5rem] lg:py-4 lg:px-6 lg:text-[20px]">
-                <NavLink to="/contact">Find Out More</NavLink>
+                <Link to="/contact">Find Out More</Link>
               </button>
             </div>
           </div>
@@ -249,7 +249,7 @@ function HomePage() {
             let us take care of the rest!
           </p>
           <button className="px-4 mt-4 uppercase py-2 cursor-pointer rounded-lg text-[#ffffff] border border-[#ffffff] font-normal font-outfit text-[14px] ">
-            Talk to a Desdicated Handler
+            Talk to a Dedicated Handler
           </button>
         </div>
       </section>
@@ -376,9 +376,11 @@ function HomePage() {
               intending Customers
             </h6>
             <div className="flex justify-center md:justify-start">
-              <button className="px-4 py-2 cursor-pointer rounded-lg text-[black] border border-black font-normal font-outfit text-[18px] md:px-6">
-                Contact Us
-              </button>
+              <Link to="/contact">
+                <button className="px-4 py-2 cursor-pointer rounded-lg text-[black] border border-black font-normal font-outfit text-[18px] md:px-6">
+                  Contact Us
+                </button>
+              </Link>
             </div>
           </div>
           <div className="col-span-1 md:px-4 lg:col-span-3 ">
