@@ -22,7 +22,7 @@ function Footer() {
             <li className="underline">Quick Estimate</li>
           </ul>
           <ul className="flex gap-4 font-outfit text-[#CC9933] text-[14px]">
-            <li>hello@eliteconcierege.vip | +441729042090</li>
+            <li>hello@eliteconcierege.vip | +4417903077383</li>
             <li className="hidden sm:block">
               | Cookies Policy | Privacy Policy
             </li>

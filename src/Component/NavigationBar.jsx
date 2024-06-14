@@ -1,13 +1,15 @@
 import React from "react";
 import EliteLogo from "../assets/elitelogo.png";
 import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { NavLink } from "react-router-dom";
+
 function NavigationBar() {
   const [isOpen, setIsOpen] = useState(false);
 
   const toggleMenu = () => {
     setIsOpen(!isOpen);
   };
+
   return (
     <header className="px-[0.7rem] relative font-nav py-4 h-31 md:px-[4rem] lg:py-6 lg:px-[5rem]">
       <div className="flex items-center px-6 py-2 justify-between relative z-50">
@@ -41,40 +43,32 @@ function NavigationBar() {
         <ul className="hidden lg:flex gap-8 font-outfit font-normal text-[#ffffff] text-[15px]">
           <li className="relative group">
             <NavLink to="/">
-              <button className="hover:opacity-50 cursor-pointer">HOME</button>
+              <button className="nav-button">HOME</button>
             </NavLink>
           </li>
           <li className="relative group">
             <NavLink to="/about-us">
-              <button className="hover:opacity-50 cursor-pointer">
-                ABOUT US
-              </button>
+              <button className="nav-button">ABOUT US</button>
             </NavLink>
           </li>
           <li className="relative group">
             <NavLink to="/service">
-              <button className="hover:opacity-50 cursor-pointer">
-                OUR SERVICES
-              </button>
+              <button className="nav-button">OUR SERVICES</button>
             </NavLink>
           </li>
           <li className="relative group">
             <a href="/wackitravels" target="_blank">
-              <button className="hover:opacity-50 cursor-pointer">
-                WACKITRAVELS
-              </button>
+              <button className="nav-button">WACKITRAVELS</button>
             </a>
           </li>
           <li className="relative group">
             <a href="/wackitravels/news" target="_blank">
-              <button className="hover:opacity-50 cursor-pointer">BLOG</button>
+              <button className="nav-button">BLOG</button>
             </a>
           </li>
           <li className="relative group">
             <NavLink to="/contact">
-              <button className="hover:opacity-50 cursor-pointer">
-                CONTACT
-              </button>
+              <button className="nav-button">CONTACT US</button>
             </NavLink>
           </li>
         </ul>
@@ -91,48 +85,40 @@ function NavigationBar() {
       </div>
       {/* Navigation links for mobile and tablet view */}
       {isOpen && (
-        <ul className="lg:hidden  w-[80%] absolute z-30 bg-[#F5F5F5] text-black font-outfit font-normal text-[15px] mt-4 ml-6 px-6 py-4 space-y-2">
+        <ul className="lg:hidden w-[80%] absolute z-30 bg-[#F5F5F5] text-black font-outfit font-normal text-[15px] mt-4 ml-6 px-6 py-4 space-y-2">
           <li className="relative group">
             <NavLink to="/">
-              <button className="hover:opacity-50 cursor-pointer">HOME</button>
+              <button className="nav-button">HOME</button>
             </NavLink>
           </li>
           <li className="relative group">
             <NavLink to="/about-us">
-              <button className="hover:opacity-50 cursor-pointer">
-                ABOUT US
-              </button>
+              <button className="nav-button">ABOUT US</button>
             </NavLink>
           </li>
           <li className="relative group">
             <NavLink to="/service">
-              <button className="hover:opacity-50 cursor-pointer">
-                OUR SERVICES
-              </button>
+              <button className="nav-button">OUR SERVICES</button>
             </NavLink>
           </li>
           <li className="relative group">
             <NavLink to="/contact">
-              <button className="hover:opacity-50 cursor-pointer">
-                CONTACT US
-              </button>
+              <button className="nav-button">CONTACT US</button>
             </NavLink>
           </li>
           <li className="relative group">
             <a href="/wackitravels" target="_blank">
-              <button className="hover:opacity-50 cursor-pointer">
-                WACKITRAVELS
-              </button>
+              <button className="nav-button">WACKITRAVELS</button>
             </a>
           </li>
           <li className="relative group">
             <a href="/wackitravels/news" target="_blank">
-              <button className="hover:opacity-50 cursor-pointer">BLOG</button>
+              <button className="nav-button">BLOG</button>
             </a>
           </li>
           <li className="relative group">
             <a href="/wackitravels/news" target="_blank">
-              <button className="hover:opacity-50 cursor-pointer">LOGIN</button>
+              <button className="nav-button">LOGIN</button>
             </a>
           </li>
         </ul>

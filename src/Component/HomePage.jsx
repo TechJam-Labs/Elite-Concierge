@@ -18,6 +18,7 @@ import Footer from "./Footer";
 import ServiceColumn from "./ServiceColumn";
 import Box from "../assets/boxes.png";
 import { Link } from "react-router-dom";
+import { Fade, Zoom } from 'react-reveal';
 
 function HomePage() {
   const travelItems = [
@@ -94,46 +95,52 @@ function HomePage() {
   ];
   return (
     <>
-      <NavigationBar />
+      <zoom>
+        <NavigationBar />
+      </zoom>
       <section>
-        <div className="overflow-hidden w-full relative mt-[-138px]  ">
-          {/* hero image for shero section  */}
+        <div className="overflow-hidden w-full relative mt-[-138px]">
+          {/* hero image for hero section */}
           <img
             className="h-[350px] w-full object-cover sm:h-[450px] md:h-[550px] lg:h-full"
             src={Heroimg}
             alt="heroimage"
           />
           {/* overlay container */}
-          <div className="absolute  inset-0 bg-[#000] opacity-80"></div>
+          <div className="absolute inset-0 bg-[#000] opacity-80"></div>
 
           {/* hero section content */}
-
           <div className="absolute top-[38%] px-[3rem] w-[100%] flex justify-center md:top-[30%] lg:top-[30%]">
             <div className="text-center">
-              <p className=" text-[16px] font-outfit text-[#EADEDE] md:text-[30px] lg:text-[40px]  ">
-                Time is the ultimate luxury!
-              </p>
-              <p className="font-outfit text-[16px] leading-none text-[#EADEDE] md:text-[30px] lg:w-[700px] lg:text-[40px] lg:mt-[-0.7rem]">
-                Imagine if you could create more of it... by making the most of
-                it
-              </p>
+              <Zoom>
+                <p className="text-[16px] font-outfit text-[#EADEDE] md:text-[30px] lg:text-[40px]">
+                  Time is the ultimate luxury!
+                </p>
+              </Zoom>
+              <Fade bottom delay={500}>
+                <p className="font-outfit text-[16px] leading-none text-[#EADEDE] md:text-[30px] lg:w-[700px] lg:text-[40px] lg:mt-[-0.7rem]">
+                  Imagine if you could create more of it... by making the most of it
+                </p>
+              </Fade>
               {/* call to action button CTA */}
-
-              <button className="px-3 py-2 font-bold  shadow-bottom tracking-6px font-outfit mt-[2.5rem] cursor-pointer rounded-lg bg-[#0E0E0D] text-[#FFFFFF] text-[10px] md:text-[16px] sm:mt-[4.5rem] md:mt-[6.5rem] lg:mt-[14.5rem] lg:py-4 lg:px-6 lg:text-[20px]">
-                <Link to="/contact">Find Out More</Link>
-              </button>
+              <Fade bottom delay={1000}>
+                <button className="px-3 py-2 font-bold shadow-bottom tracking-6px font-outfit mt-[2.5rem] cursor-pointer rounded-lg bg-[#0E0E0D] text-[#FFFFFF] text-[10px] md:text-[16px] sm:mt-[4.5rem] md:mt-[6.5rem] lg:mt-[14.5rem] lg:py-4 lg:px-6 lg:text-[20px]">
+                  <Link to="/contact">Find Out More</Link>
+                </button>
+              </Fade>
             </div>
           </div>
         </div>
       </section>
 
       {/* service section displayed in cards  */}
-      <section className=" px-[2rem] relative sm:px-[6rem] md:px-[9rem] lg:px-[12rem]">
+      <section className="px-[2rem] relative sm:px-[6rem] md:px-[9rem] lg:px-[12rem]">
         <div className="w-full bg-[#ffffff] shadow-card mb-8 grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 items-center z-30 mt-[-4rem]">
           {travelItems.map((item, index) => (
-            <div
+            <a
               key={index}
-              className={`px-4 py-4 flex items-center gap-2 md:flex-col ${
+              href="/service"
+              className={`px-4 py-4 flex items-center gap-2 md:flex-col cursor-pointer transition-transform duration-500 transform hover:-translate-y-4 ${
                 index !== travelItems.length - 1
                   ? "border-r border-[#DEB41F] border-b border-[#DEB41F] lg:border-r border-[#DEB41F] md:border-b-0 lg:border-b-0"
                   : ""
@@ -157,32 +164,35 @@ function HomePage() {
               </div>
               {index === 2 && (
                 <>
-                  <div className="flex px-4 gap-2 items-center absolute inset-0 bg-[#AC863A] z-0 h-[125%] top-[-14%] md:flex-col md:gap-0 md:items-center justify-center md:px-0 ">
+                  <div className="flex px-4 gap-2 items-center absolute inset-0 bg-[#AC863A] z-0 h-[125%] top-[-14%] md:flex-col md:gap-0 md:items-center justify-center md:px-0">
                     <img
                       className="w-[30px] md:w-[50px]"
                       src={item.imgSrc}
                       alt=""
                     />
                     <div>
-                      <h4 className="font-roboto font-bold text-[16px] sm:text-[16px] md:text-[14px] lg:text-[24px] ">
+                      <h4 className="font-roboto font-bold text-[16px] sm:text-[16px] md:text-[14px] lg:text-[24px]">
                         {item.title}
                       </h4>
-                      <h6 className="font-roboto font-semi-bold mt-[-0.45rem] text-[14px] lg:text-[20px] ">
+                      <h6 className="font-roboto font-semi-bold mt-[-0.45rem] text-[14px] lg:text-[20px]">
                         {item.subtitle}
                       </h6>
                     </div>
                     <img
-                      className=" w-[30px] md:w-[50px] md:block"
+                      className="w-[30px] md:w-[50px] md:block"
                       src={Additionalsvg}
                       alt="Additional SVG"
                     />
                   </div>
                 </>
               )}
-            </div>
+            </a>
           ))}
         </div>
       </section>
+
+
+
 
       {/* writeup section  */}
       <section className="px-[2rem] mt-[5rem] lg:px-[12rem]">
