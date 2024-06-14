@@ -9,7 +9,7 @@ function NavigationBar() {
     setIsOpen(!isOpen);
   };
   return (
-    <header className="px-[0.7rem] relative font-nav py-4 h-31 md:px-[4rem] lg:py-6 lg:px-[6rem]">
+    <header className="px-[0.7rem] relative font-nav py-4 h-31 md:px-[4rem] lg:py-6 lg:px-[5rem]">
       <div className="flex items-center px-6 py-2 justify-between relative z-50">
         {/* Logo section */}
         <div>
@@ -38,7 +38,7 @@ function NavigationBar() {
           </button>
         </div>
         {/* Navigation links for laptop view */}
-        <ul className="hidden lg:flex gap-10 font-outfit font-normal text-[#ffffff] text-[15px]">
+        <ul className="hidden lg:flex gap-8 font-outfit font-normal text-[#ffffff] text-[15px]">
           <li className="relative group">
             <NavLink to="/">
               <button className="hover:opacity-50 cursor-pointer">HOME</button>
@@ -59,20 +59,35 @@ function NavigationBar() {
             </NavLink>
           </li>
           <li className="relative group">
-            <button className="hover:opacity-50 cursor-pointer">
-              WACKITRAVELS
-            </button>
+            <a href="/wackitravels" target="_blank">
+              <button className="hover:opacity-50 cursor-pointer">
+                WACKITRAVELS
+              </button>
+            </a>
           </li>
           <li className="relative group">
-            <button className="hover:opacity-50 cursor-pointer">BLOG</button>
+            <a href="/wackitravels/news" target="_blank">
+              <button className="hover:opacity-50 cursor-pointer">BLOG</button>
+            </a>
+          </li>
+          <li className="relative group">
+            <NavLink to="/contact">
+              <button className="hover:opacity-50 cursor-pointer">
+                CONTACT
+              </button>
+            </NavLink>
           </li>
         </ul>
         {/* Call to action button CTA for laptop view */}
-        <NavLink to="/contact" className="hidden lg:block">
+        <a
+          className="hidden lg:block"
+          href="/wackitravels/login"
+          target="_blank"
+        >
           <button className="hidden lg:block px-6 py-2 cursor-pointer rounded-lg text-[#ffffff] border border-[#FFFFFF] font-normal text-[18px]">
-            Contact Us
+            Login
           </button>
-        </NavLink>
+        </a>
       </div>
       {/* Navigation links for mobile and tablet view */}
       {isOpen && (
@@ -104,12 +119,21 @@ function NavigationBar() {
             </NavLink>
           </li>
           <li className="relative group">
-            <button className="hover:opacity-50 cursor-pointer">
-              WACKITRAVELS
-            </button>
+            <a href="/wackitravels" target="_blank">
+              <button className="hover:opacity-50 cursor-pointer">
+                WACKITRAVELS
+              </button>
+            </a>
           </li>
           <li className="relative group">
-            <button className="hover:opacity-50 cursor-pointer">BLOG</button>
+            <a href="/wackitravels/news" target="_blank">
+              <button className="hover:opacity-50 cursor-pointer">BLOG</button>
+            </a>
+          </li>
+          <li className="relative group">
+            <a href="/wackitravels/news" target="_blank">
+              <button className="hover:opacity-50 cursor-pointer">LOGIN</button>
+            </a>
           </li>
         </ul>
       )}

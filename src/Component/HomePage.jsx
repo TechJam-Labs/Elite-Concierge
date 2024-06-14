@@ -16,7 +16,8 @@ import Service from "../assets/services.png";
 import Circle from "../assets/circle.svg";
 import Footer from "./Footer";
 import ServiceColumn from "./ServiceColumn";
-import { NavLink } from "react-router-dom";
+import Box from "../assets/boxes.png";
+import { Link } from "react-router-dom";
 
 function HomePage() {
   const travelItems = [
@@ -119,7 +120,7 @@ function HomePage() {
               {/* call to action button CTA */}
 
               <button className="px-3 py-2 font-bold  shadow-bottom tracking-6px font-outfit mt-[2.5rem] cursor-pointer rounded-lg bg-[#0E0E0D] text-[#FFFFFF] text-[10px] md:text-[16px] sm:mt-[4.5rem] md:mt-[6.5rem] lg:mt-[14.5rem] lg:py-4 lg:px-6 lg:text-[20px]">
-                <NavLink to="/contact">Find Out More</NavLink>
+                <Link to="/contact">Find Out More</Link>
               </button>
             </div>
           </div>
@@ -237,27 +238,31 @@ function HomePage() {
 
       {/* business conceriege section */}
 
-      <section className=" px-[2rem] py-[2rem] mt-6 bg-[#AC863A] md:hidden">
-        <div className="text-[#FFFFFF] flex flex-col justify-center">
-          <h2 className="text-center uppercase font-lato text-[24px]">
+      <section className="relative px-[2rem] py-[2rem] mt-6 bg-[#AC863A]  lg:block lg:flex lg:flex-col lg:items-end lg:px-[10rem] lg:py-[4rem] lg:z-[-1] ">
+        <div className="text-[#FFFFFF] flex flex-col items-center lg:items-start lg:w-[48%] ">
+          <h2 className="text-center uppercase font-lato text-[24px] lg:text-[36px]">
             business concierge
           </h2>
-          <p className="text-center font-outfit text-[15px]">
+          <p className="text-center font-outfit text-[15px] lg:text-[20px] lg:text-start lg:mt-2 lg:mb-2 ">
             Streamline your business travel with our expert concierge services.
             From transportation and accommodations to dining and event planning,
             we've got you covered. Enjoy a seamless experience – book now and
             let us take care of the rest!
           </p>
-          <button className="px-4 mt-4 uppercase py-2 cursor-pointer rounded-lg text-[#ffffff] border border-[#ffffff] font-normal font-outfit text-[14px] ">
-            Talk to a Desdicated Handler
+          <button className="px-4 mt-4 uppercase py-2 cursor-pointer rounded-lg text-[#ffffff] border border-[#ffffff] font-normal font-outfit text-[14px] lg:text-[18px]">
+            Talk to a Dedicated Handler
           </button>
         </div>
       </section>
 
+      <section className="hidden lg:block z-30 mt-[-40rem] ml-[2rem]">
+        <img className="w-[600px]" src={Box} alt="boxes" />
+      </section>
+
       {/* service section and what we do section */}
 
-      <section className=" w-full relative z-[-15] md:mt-[-1rem] ">
-        <div className="hidden md:block custom">
+      <section className=" w-full relative z-[-15]  lg:mt-[-15rem]">
+        <div className="hidden lg:block custom">
           <svg
             className="hidden"
             data-name="Layer 1"
@@ -343,7 +348,7 @@ function HomePage() {
           TRAVEL JOURNAL | NEWS & UPDATES | TIPS
         </h6>
 
-        <div className=" w-full mb-8 grid grid-cols-1 md:grid-cols-3 gap-4 mt-4">
+        <div className=" w-full mb-8 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 mt-4">
           {blog.map((item, index) => (
             <div key={index} className={`flex flex-col  py-4 md:px-4`}>
               <img src={item.imgSrc} alt={item.title} className="mb-4" />
@@ -362,7 +367,7 @@ function HomePage() {
       </section>
 
       {/* Faqs section */}
-      <section className="px-[2rem] pt-[2rem] md:px-[5rem] md:pb-[5rem] md:pt-[5rem]">
+      <section className="px-[1rem] pt-[2rem] md:px-[5rem] md:pb-[5rem] md:pt-[5rem]">
         <div className="w-full grid grid-cols-1 lg:grid-cols-5 gap-4">
           <div className="col-span-1  lg:col-span-2">
             <h6 className="font-outfit text-[20px] text-center md:text-left ">
@@ -376,34 +381,149 @@ function HomePage() {
               intending Customers
             </h6>
             <div className="flex justify-center md:justify-start">
-              <button className="px-4 py-2 cursor-pointer rounded-lg text-[black] border border-black font-normal font-outfit text-[18px] md:px-6">
-                Contact Us
-              </button>
+              <Link to="/contact">
+                <button className="px-4 py-2 cursor-pointer rounded-lg text-[black] border border-black font-normal font-outfit text-[18px] md:px-6">
+                  Contact Us
+                </button>
+              </Link>
             </div>
           </div>
           <div className="col-span-1 md:px-4 lg:col-span-3 ">
             <Accordion
-              topic="What Payment Plan does Elite concierge support? "
-              content={[
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+              topic="Travel"
+              qaList={[
+                {
+                  question:
+                    "What types of travel arrangements can you assist with?",
+                  answer:
+                    "We can assist with booking flights, hotels, car rentals, and more. We can also arrange for airport transfers and travel tours.",
+                },
+                {
+                  question:
+                    "Can you help with visa applications and travel documentation?",
+                  answer:
+                    "Yes, we can assist with visa applications, passport renewal, and other travel documentation needs ",
+                },
+                {
+                  question: "How far in advance should i book my travel plans?",
+                  answer:
+                    "We recommend booking at least 2-3 months in advance for international travel and 1-2 months for domestic travel",
+                },
+                {
+                  question: "Can you assist with travel insurance?",
+                  answer:
+                    "Yes, we can help you purchase travel insurance policies that suit your needs",
+                },
+                {
+                  question:
+                    "What if i need to cancel or change my travel plans?",
+                  answer:
+                    "We can assist with cancellations and changes to your travel plans, subject to the policies of the airlines, hotels, and other service providers.",
+                },
+                {
+                  question: "How do i access your services while traveling?",
+                  answer:
+                    "Reach us 24/7 through our dedicated phone line and email.",
+                },
               ]}
             />
             <Accordion
-              topic="Do you "
-              content={[
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+              topic="Personal Shopping"
+              qaList={[
+                {
+                  question:
+                    "What types of products can you assist with purchasing?",
+                  answer:
+                    "We can assist with purchasing clothing, gift, electronics, and more.",
+                },
+                {
+                  question:
+                    "Can you help with product research and recommendations?",
+                  answer:
+                    "Yes, our personal shoppers can research and recommend products based on your preferences and needs.",
+                },
+                {
+                  question: "How do you ensure timely delivery of purchase?",
+                  answer:
+                    "We work with reputable retailers and shipping partners to ensure timely delivery of your purchases",
+                },
+                {
+                  question:
+                    "Can i return or exchange items if they dont fit or meet my expectation?",
+                  answer:
+                    "Yes, we can assist with returns and exchanges, subject to the retailer's policies.",
+                },
+                {
+                  question: "Do you offer gift wrapping services?",
+                  answer:
+                    "Yes, we offer gift wrapping services for an additional fee",
+                },
               ]}
             />
             <Accordion
-              topic="What Payment Plan does Elite concierge support? "
-              content={[
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+              topic="Concierge Services"
+              qaList={[
+                {
+                  question: "What services do you offer?",
+                  answer:
+                    "We provide relocation assistance, visa processing, gift buying, destination event planning, trave and liesure arrangements , hospitality services, lifestyle management, and personal shopping ",
+                },
+                {
+                  question: "How quickly can you complete tasks?",
+                  answer:
+                    "we aim to complete tasks within 48hours, depending on the complexity of the task",
+                },
+                {
+                  question:
+                    "Can you assist with event planning and coordination?",
+                  answer:
+                    "Yes, we can assist with event planning and coordination, from venue selection to catering and decor",
+                },
+                {
+                  question:
+                    "Do you offer personalized recommendations for activities and services?",
+                  answer:
+                    "Yes, our concierges can provide personalized recommendations based on your preferences and interests",
+                },
+                {
+                  question:
+                    "How do you ensure confidentiality and discretion in your services?",
+                  answer:
+                    "We maintain confidentiality and discretion in all our services, and our staff are bound by non-disclosure agreements",
+                },
               ]}
             />
             <Accordion
-              topic="What Payment Plan does Elite concierge support? "
-              content={[
-                "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat",
+              topic="General FAQS"
+              qaList={[
+                {
+                  question:
+                    "What types of products can you assist with purchasing?",
+                  answer:
+                    "We can assist with purchasing clothing, gift, electronics, and more.",
+                },
+                {
+                  question:
+                    "Can you help with product research and recommendations?",
+                  answer:
+                    "Yes, our personal shoppers can research and recommend products based on your preferences and needs.",
+                },
+                {
+                  question: "How do you ensure timely delivery of purchase?",
+                  answer:
+                    "We work with reputable retailers and shipping partners to ensure timely delivery of your purchases",
+                },
+                {
+                  question:
+                    "Can i return or exchange items if they dont fit or meet my expectation?",
+                  answer:
+                    "Yes, we can assisy with returns and exchanges, subject to the retailer's policies.",
+                },
+                {
+                  question: "Do you offer gift wrapping services?",
+                  answer:
+                    "Yes, we offer gift wrapping services for an additional fee",
+                },
               ]}
             />
           </div>
