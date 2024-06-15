@@ -6,6 +6,8 @@ export default defineConfig({
   build: {
     rollupOptions: {
       external: ['react-reveal'],
+      external: ['react-dom/client']
+ 
     },
   },
 });
