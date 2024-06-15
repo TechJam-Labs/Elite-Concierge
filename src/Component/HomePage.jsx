@@ -18,7 +18,7 @@ import Footer from "./Footer";
 import ServiceColumn from "./ServiceColumn";
 import Box from "../assets/boxes.png";
 import { Link } from "react-router-dom";
-import { Fade, Zoom } from 'react-reveal';
+import { motion } from 'framer-motion';
 
 function HomePage() {
   const travelItems = [
@@ -96,43 +96,53 @@ function HomePage() {
 
   return (
     <>
-      <zoom>
+    
         <NavigationBar />
-      </zoom>
-      <section>
-        <div className="overflow-hidden w-full relative mt-[-138px]">
-          {/* hero image for hero section */}
-          <img
-            className="h-[350px] w-full object-cover sm:h-[450px] md:h-[550px] lg:h-full"
-            src={Heroimg}
-            alt="heroimage"
-          />
-          {/* overlay container */}
-          <div className="absolute inset-0 bg-[#000] opacity-80"></div>
+  
+        <section>
+          <div className="overflow-hidden w-full relative mt-[-138px]">
+            {/* hero image for hero section */}
+            <img
+              className="h-[350px] w-full object-cover sm:h-[450px] md:h-[550px] lg:h-full"
+              src={Heroimg}
+              alt="heroimage"
+            />
+          
+            {/* overlay container */}
+            <div className="absolute inset-0 bg-[#000] opacity-80"></div>
 
-          {/* hero section content */}
-          <div className="absolute top-[38%] px-[3rem] w-[100%] flex justify-center md:top-[30%] lg:top-[30%]">
-            <div className="text-center">
-              <Zoom>
-                <p className="text-[16px] font-outfit text-[#EADEDE] md:text-[30px] lg:text-[40px]">
-                  Time is the ultimate luxury!
-                </p>
-              </Zoom>
-              <Fade bottom delay={500}>
-                <p className="font-outfit text-[16px] leading-none text-[#EADEDE] md:text-[30px] lg:w-[700px] lg:text-[40px] lg:mt-[-0.7rem]">
-                  Imagine if you could create more of it... by making the most of it
-                </p>
-              </Fade>
-              {/* call to action button CTA */}
-              <Fade bottom delay={1000}>
-                <button className="px-3 py-2 font-bold shadow-bottom tracking-6px font-outfit mt-[2.5rem] cursor-pointer rounded-lg bg-[#0E0E0D] text-[#FFFFFF] text-[10px] md:text-[16px] sm:mt-[4.5rem] md:mt-[6.5rem] lg:mt-[14.5rem] lg:py-4 lg:px-6 lg:text-[20px]">
-                  <Link to="/contact">Find Out More</Link>
-                </button>
-              </Fade>
-            </div>
+            {/* hero section content */}
+            <motion.div 
+              initial={{ opacity: 0, y: -20 }} 
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6 }}
+              className="absolute top-[38%] px-[3rem] w-[100%] flex justify-center md:top-[30%] lg:top-[30%]"
+            >
+              <div className="text-center">
+              
+                  <p className="text-[16px] font-outfit text-[#EADEDE] md:text-[30px] lg:text-[40px]">
+                    Time is the ultimate luxury!
+                  </p>
+                
+                
+                  <p className="font-outfit text-[16px] leading-none text-[#EADEDE] md:text-[30px] lg:w-[700px] lg:text-[40px] lg:mt-[-0.7rem]">
+                    Imagine if you could create more of it... by making the most of it
+                  </p>
+                {/* call to action button CTA */}
+                
+                  <motion.button 
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    className="px-3 py-2 font-bold shadow-bottom tracking-6px font-outfit mt-[2.5rem] cursor-pointer rounded-lg bg-[#0E0E0D] text-[#FFFFFF] text-[10px] md:text-[16px] sm:mt-[4.5rem] md:mt-[6.5rem] lg:mt-[14.5rem] lg:py-4 lg:px-6 lg:text-[20px]"
+                  >
+                    <Link to="/contact">Find Out More</Link>
+                  </motion.button>
+                  
+                  
+              </div>
+            </motion.div>
           </div>
-        </div>
-      </section>
+        </section>
 
       {/* service section displayed in cards  */}
       <section className="px-[2rem] relative sm:px-[6rem] md:px-[9rem] lg:px-[12rem]">
@@ -197,22 +207,26 @@ function HomePage() {
 
       {/* writeup section  */}
       <section className="px-[2rem] mt-[5rem] lg:px-[12rem]">
-        <div className="w-full mb-8  flex flex-col items-center text-center  ">
-          <img src={Exclamationsvg} alt="exc svg" />
-          <p className="font-outfit text-[22px] mt-[0.9rem] lg:text-[24px]">
-            Twenty years from now you will be more disappointed by the things
-            you didn’t do than by the ones you did do. So throw off the
-            bowlines. Sail away from the safe harbor. Catch the trade winds in
-            your sails.{" "}
-            <span className="font-semibold underline">
-              Explore. Dream. Discover
-            </span>
-          </p>
-          <p className="text-[#AC863A] mt-2 font-semibold font-outfit text-[22px]">
-            ― Mark Twain
-          </p>
-        </div>
-      </section>
+      <motion.div
+        initial={{ x: -200, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ type: 'spring', stiffness: 100, delay: 0.5 }}
+        className="w-full mb-8 flex flex-col items-center text-center"
+      >
+        <img src={Exclamationsvg} alt="exc svg" />
+        <p className="font-outfit text-[22px] mt-[0.9rem] lg:text-[24px]">
+          Twenty years from now you will be more disappointed by the things you
+          didn’t do than by the ones you did do. So throw off the bowlines.
+          Sail away from the safe harbor. Catch the trade winds in your sails.{' '}
+          <span className="font-semibold underline">
+            Explore. Dream. Discover
+          </span>
+        </p>
+        <p className="text-[#AC863A] mt-2 font-semibold font-outfit text-[22px]">
+          ― Mark Twain
+        </p>
+      </motion.div>
+    </section>
 
       {/* ESSENCE OF ELITE CONCIERGE section  */}
       <section className="px-[2rem] mt-[3rem] lg:px-[12rem]">
@@ -249,7 +263,7 @@ function HomePage() {
 
       {/* business conceriege section */}
 
-      <Fade>
+      
         <section className="relative px-[2rem] py-[2rem] mt-6 bg-[#AC863A] lg:block lg:flex lg:flex-col lg:items-end lg:px-[10rem] lg:py-[4rem] lg:z-[-1]">
           <div className="text-[#FFFFFF] flex flex-col items-center lg:items-start lg:w-[48%]">
             <h2 className="text-center uppercase font-lato text-[24px] lg:text-[36px]">
@@ -266,16 +280,15 @@ function HomePage() {
             </Link>
           </div>
         </section>
-      </Fade>
+
 
 
       <section className="hidden lg:block z-30 mt-[-40rem] ml-[2rem]">
         <img className="w-[600px]" src={Box} alt="boxes" />
       </section>
-
+      
       {/* service section and what we do section */}
 
-     <Fade>
       <section className="w-full relative z-[-15] lg:mt-[-15rem]">
         <div className="hidden lg:block custom">
           <a href="/service" className="block">
@@ -348,8 +361,6 @@ function HomePage() {
         </div>
       </section>
 
-    </Fade>
-
    
       {/* eclipse section */}
       
@@ -360,7 +371,6 @@ function HomePage() {
       </section>
 
       {/* Blog section */}
-      <Fade>
       <section className="px-[2rem] pb-[0.1rem] pt-[3rem] bg-[#F5F5F5] md:px-[5rem]">
         <h4 className="font-outfit text-[30px] font-bold">wackiTravels BLOG</h4>
         <h6 className="font-outfit text-[12px] text-[#604516]">
@@ -384,10 +394,8 @@ function HomePage() {
           ))}
         </div>
       </section>
-      </Fade>
 
       {/* Faqs section */}
-      <Fade>
       <section className="px-[1rem] pt-[2rem] md:px-[5rem] md:pb-[5rem] md:pt-[5rem]">
         <div className="w-full grid grid-cols-1 lg:grid-cols-5 gap-4">
           <div className="col-span-1  lg:col-span-2">
@@ -550,10 +558,8 @@ function HomePage() {
           </div>
         </div>
       </section>
-      </Fade>
 
       {/* newletter section */}
-      <Fade>
       <section className="px-[2rem] flex justify-center bg-[#FCF5E7] py-[2rem] md:py-[4rem] md:px-0 ">
         <div className="text-center">
           <h4 className="font-lato font-bold text-[24px] md:text-[32px]">
@@ -579,7 +585,6 @@ function HomePage() {
           </div>
         </div>
       </section>
-      </Fade>
 
       {/* footer component displaying footwe section  */}
       <Footer />
