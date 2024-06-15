@@ -93,6 +93,7 @@ function HomePage() {
       description: "Experience top-notch quality in every service we provide.",
     },
   ];
+
   return (
     <>
       <zoom>
@@ -248,22 +249,25 @@ function HomePage() {
 
       {/* business conceriege section */}
 
-      <section className="relative px-[2rem] py-[2rem] mt-6 bg-[#AC863A]  lg:block lg:flex lg:flex-col lg:items-end lg:px-[10rem] lg:py-[4rem] lg:z-[-1] ">
-        <div className="text-[#FFFFFF] flex flex-col items-center lg:items-start lg:w-[48%] ">
-          <h2 className="text-center uppercase font-lato text-[24px] lg:text-[36px]">
-            business concierge
-          </h2>
-          <p className="text-center font-outfit text-[15px] lg:text-[20px] lg:text-start lg:mt-2 lg:mb-2 ">
-            Streamline your business travel with our expert concierge services.
-            From transportation and accommodations to dining and event planning,
-            we've got you covered. Enjoy a seamless experience – book now and
-            let us take care of the rest!
-          </p>
-          <button className="px-4 mt-4 uppercase py-2 cursor-pointer rounded-lg text-[#ffffff] border border-[#ffffff] font-normal font-outfit text-[14px] lg:text-[18px]">
-            Talk to a Dedicated Handler
-          </button>
-        </div>
-      </section>
+      <Fade>
+        <section className="relative px-[2rem] py-[2rem] mt-6 bg-[#AC863A] lg:block lg:flex lg:flex-col lg:items-end lg:px-[10rem] lg:py-[4rem] lg:z-[-1]">
+          <div className="text-[#FFFFFF] flex flex-col items-center lg:items-start lg:w-[48%]">
+            <h2 className="text-center uppercase font-lato text-[24px] lg:text-[36px]">
+              business concierge
+            </h2>
+            <p className="text-center font-outfit text-[15px] lg:text-[20px] lg:text-start lg:mt-2 lg:mb-2">
+              Streamline your business travel with our expert concierge services.
+              From transportation and accommodations to dining and event planning,
+              we've got you covered. Enjoy a seamless experience – book now and
+              let us take care of the rest!
+            </p>
+            <Link to="/contact" className="block px-4 mt-4 uppercase py-2 cursor-pointer rounded-lg text-[#ffffff] border border-[#ffffff] font-normal font-outfit text-[14px] lg:text-[18px] transition-all duration-300 ease-in-out hover:translate-y-[-2px]" style={{ letterSpacing: '-0.5px' }}>
+              Talk to a Dedicated Handler
+            </Link>
+          </div>
+        </section>
+      </Fade>
+
 
       <section className="hidden lg:block z-30 mt-[-40rem] ml-[2rem]">
         <img className="w-[600px]" src={Box} alt="boxes" />
@@ -271,78 +275,80 @@ function HomePage() {
 
       {/* service section and what we do section */}
 
-      <section className=" w-full relative z-[-15]  lg:mt-[-15rem]">
+     <Fade>
+      <section className="w-full relative z-[-15] lg:mt-[-15rem]">
         <div className="hidden lg:block custom">
-          <svg
-            className="hidden"
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
-              className="shape-fill"
-            ></path>
-          </svg>
+          <a href="/service" className="block">
+            <svg
+              className="hidden transition-transform duration-300 hover:scale-105 cursor-pointer"
+              data-name="Layer 1"
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 1200 120"
+              preserveAspectRatio="none"
+            >
+              <path
+                d="M985.66,92.83C906.67,72,823.78,31,743.84,14.19c-82.26-17.34-168.06-16.33-250.45.39-57.84,11.73-114,31.07-172,41.86A600.21,600.21,0,0,1,0,27.35V120H1200V95.8C1132.19,118.92,1055.71,111.31,985.66,92.83Z"
+                className="shape-fill"
+              ></path>
+            </svg>
+          </a>
         </div>
+      
         <div className="overflow-hidden w-full h-[1100px] md:h-full">
           <img
-            className="h-full w-full z-[-30] object-cover md:mt-[-4rem] "
+            className="h-full w-full z-[-30] object-cover md:mt-[-4rem]"
             src={Service}
             alt="serviceimage"
           />
-          <div className=" text-[#ffffff] absolute top-[5%] inset-0 md:top-[25%] md:px-[6rem]">
+          <div className="text-[#ffffff] absolute top-[5%] inset-0 md:top-[25%] md:px-[6rem]">
             <div className="text-center">
-              <h2 className="font-outfit text-[24px] font-bold uppercase  md:text-[36px]">
+              <h2 className="font-outfit text-[24px] font-bold uppercase md:text-[36px]">
                 Our services
               </h2>
             </div>
             <div className="w-full px-[2rem] lg:px-0 md:flex md:justify-center lg:justify-end pt-4 md:pt-8">
-              {/* <div className="w-[50%]"></div> */}
-              <div className=" w-full md:w-[50%] md:flex md:gap-4">
-                <ServiceColumn
-                  services={[
-                    { title: "Travel & Leisure", width: "w-full" },
-                    { title: "Hospitality", width: "md:w-[70%] md:ml-[5rem]" },
-                  ]}
-                  marginTop="md:mt-[2.3rem]"
-                />
-                <ServiceColumn
-                  services={[
-                    {
-                      title: "Lifestyle Management",
-                      width: "md:w-[98%] lg:w-[100%]",
-                    },
-                    {
-                      title: "Personal Shopping",
-                      width: "md:w-[98%] lg:w-[100%]",
-                    },
-                  ]}
-                  marginTop="mt-[1rem] md:mt-[-2rem]"
-                />
+              <div className="w-full md:w-[50%] md:flex md:gap-4">
+              <ServiceColumn
+                services={[
+                  { title: 'Travel & Leisure', width: 'w-full', link: '/service' },
+                  { title: 'Hospitality', width: 'md:w-[70%] md:ml-[5rem]', link: '/service' },
+                ]}
+                marginTop="md:mt-[2.3rem]"
+              />
+              <ServiceColumn
+                services={[
+                  { title: 'Lifestyle Management', width: 'md:w-[98%] lg:w-[100%]', link: '/service' },
+                  { title: 'Personal Shopping', width: 'md:w-[98%] lg:w-[100%]', link: '/service' },
+                ]}
+                marginTop="mt-[1rem] md:mt-[-2rem]"
+              />
+
               </div>
             </div>
           </div>
-          {/* <div className="absolute inset-0 bg-[#000] opacity-80"></div> */}
         </div>
-        <div className=" text-[#F8EEEE]  absolute bottom-[5%] md:bottom-[10%] px-[2rem] font-outfit md:hidden lg:block lg:flex lg:px-[8rem]  ">
-          <h3 className="text-center text-[#F8E6C3] font-outfit uppercase font-bold text-[24px] md:text-[35px] md:mb-0 md:-rotate-90  ">
+      
+        <div className="text-[#F8EEEE] absolute bottom-[5%] md:bottom-[10%] px-[2rem] font-outfit md:hidden lg:block lg:flex lg:px-[8rem]">
+          <h3 className="text-center text-[#F8E6C3] font-outfit uppercase font-bold text-[24px] md:text-[35px] md:mb-0 md:-rotate-90">
             with us you get...
           </h3>
           <div
-            style={{ borderLeft: "2px solid #FFFEF8" }}
+            style={{ borderLeft: '2px solid #FFFEF8' }}
             className="flex flex-col gap-2 pl-2 md:ml-[-19rem]"
           >
             {items.map(({ title, description }) => (
-              <div key={title}>
-                <h6 className="font-bold">{title}</h6>
-                <p className=" w-[90%] md:w-[60%] leading-[1]">{description}</p>
+              <div key={title} className="transition-transform duration-300 block p-2 hover:scale-105 cursor-pointer">
+                <a href="/service" className="block cursor-pointer hover:text-[#FFD700] transition-colors duration-300">
+                  <h6 className="font-bold">{title}</h6>
+                  <p className="w-[90%] md:w-[60%] leading-[1]">{description}</p>
+                </a>
               </div>
             ))}
           </div>
         </div>
       </section>
+
+    </Fade>
 
       {/* eclipse section */}
       <section className=" flex justify-center bg-[#F5F5F5]">
