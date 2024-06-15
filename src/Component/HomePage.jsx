@@ -350,7 +350,9 @@ function HomePage() {
 
     </Fade>
 
+   
       {/* eclipse section */}
+      
       <section className=" flex justify-center bg-[#F5F5F5]">
         <div className="z-30 mt-[-3rem] bg-white p-2 rounded-full">
           <img src={Circle} alt="circle" />
@@ -358,6 +360,7 @@ function HomePage() {
       </section>
 
       {/* Blog section */}
+      <Fade>
       <section className="px-[2rem] pb-[0.1rem] pt-[3rem] bg-[#F5F5F5] md:px-[5rem]">
         <h4 className="font-outfit text-[30px] font-bold">wackiTravels BLOG</h4>
         <h6 className="font-outfit text-[12px] text-[#604516]">
@@ -381,8 +384,10 @@ function HomePage() {
           ))}
         </div>
       </section>
+      </Fade>
 
       {/* Faqs section */}
+      <Fade>
       <section className="px-[1rem] pt-[2rem] md:px-[5rem] md:pb-[5rem] md:pt-[5rem]">
         <div className="w-full grid grid-cols-1 lg:grid-cols-5 gap-4">
           <div className="col-span-1  lg:col-span-2">
@@ -545,8 +550,10 @@ function HomePage() {
           </div>
         </div>
       </section>
+      </Fade>
 
       {/* newletter section */}
+      <Fade>
       <section className="px-[2rem] flex justify-center bg-[#FCF5E7] py-[2rem] md:py-[4rem] md:px-0 ">
         <div className="text-center">
           <h4 className="font-lato font-bold text-[24px] md:text-[32px]">
@@ -572,6 +579,7 @@ function HomePage() {
           </div>
         </div>
       </section>
+      </Fade>
 
       {/* footer component displaying footwe section  */}
       <Footer />
