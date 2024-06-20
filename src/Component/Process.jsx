@@ -19,21 +19,20 @@ function Process() {
         </p>
         <img className="w-[90%]" src={dotarrow} alt="dot-arrow" />
         <img
-          className="absolute top-[10.9rem] right-[6.3rem]"
+          className="absolute top-[19%] right-[5.5%]"
           src={plane}
           alt="plane"
         />
         <img
-          className="absolute bottom-[9rem] left-[7.5rem]"
+          className="absolute bottom-[16%] left-[6.2%]"
           src={ring}
           alt="ring"
         />
-
-        <p className="bg-[#CC9933] flex items-center justify-center w-[4rem] h-[4rem] rounded-full absolute top-[14rem] z-10 left-[34rem] font-outfit font-medium text-[2rem]">
+        <p className="bg-[#CC9933] flex items-center justify-center w-[4rem] h-[4rem] rounded-full absolute top-[28%] left-[32%] z-10 font-outfit font-medium text-[2rem]">
           01
         </p>
         <div
-          className="absolute top-[16rem] left-[26rem] py-[3rem] px-[1.5rem] w-[20rem] h-[20rem] rounded-full flex flex-col items-center justify-center bg-white border-none"
+          className="absolute top-[32%] left-[25%] py-[3rem] px-[1.5rem] w-[20rem] h-[20rem] rounded-full flex flex-col items-center justify-center bg-white border-none"
           style={{
             boxShadow: `
                  0px 46.67px 93.33px 0px #3333333D,
@@ -50,11 +49,11 @@ function Process() {
           </p>
         </div>
 
-        <p className="bg-[#CC9933] flex items-center justify-center w-[4rem] h-[4rem] rounded-full absolute top-[33rem] z-10 left-[61rem] font-outfit font-medium text-[2rem]">
+        <p className="bg-[#CC9933] flex items-center justify-center w-[4rem] h-[4rem] rounded-full absolute top-[62%] z-10 left-[52%] font-outfit font-medium text-[2rem]">
           02
         </p>
         <div
-          className="absolute top-[35rem] left-[53rem] py-[3rem] px-[1.5rem] w-[20rem] h-[20rem] rounded-full flex flex-col items-center justify-center bg-white border-none"
+          className="absolute top-[65%] left-[45%] py-[3rem] px-[1.5rem] w-[20rem] h-[20rem] rounded-full flex flex-col items-center justify-center bg-white border-none"
           style={{
             boxShadow: `
                  0px 46.67px 93.33px 0px #3333333D,
@@ -70,11 +69,11 @@ function Process() {
             offerings, you make payments as appropriate
           </p>
         </div>
-        <p className="bg-[#CC9933] flex items-center justify-center w-[4rem] h-[4rem] rounded-full absolute top-[14rem] z-10 right-[23rem] font-outfit font-medium text-[2rem]">
+        <p className="bg-[#CC9933] flex items-center justify-center w-[4rem] h-[4rem] rounded-full absolute top-[28%] z-10 right-[22%] font-outfit font-medium text-[2rem]">
           03
         </p>
         <div
-          className="absolute top-[16rem] right-[15rem] py-[3rem] px-[1.5rem] w-[20rem] h-[20rem] rounded-full flex flex-col items-center justify-center bg-white border-none"
+          className="absolute top-[32%] right-[15%] py-[3rem] px-[1.5rem] w-[20rem] h-[20rem] rounded-full flex flex-col items-center justify-center bg-white border-none"
           style={{
             boxShadow: `
                  0px 46.67px 93.33px 0px #3333333D,
